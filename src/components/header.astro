@@ -1,25 +1,158 @@
 ---
 const {text} = Astro.props
+const {h1} = Astro.props
 ---
 
+
 <header>
-<nav>
-    <ul>
-        <li><a href="#">{text}</a></li>
-    </ul>
-</nav>
+    <h1>{h1}</h1>
+<div class="menu">
+    <nav>
+        <ul>
+            <li><a href="#">{text}</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+    </nav>
+</div>
 </header>
 
 
 <style>
-header{
-    background-color: #587090;
-    
-    text-decoration: none;
+h1{
+    color: #FFFFFF;
+    margin-left: 5rem;
+    font-size: 48px; /* Justér størrelsen efter behov */
+    font-weight: bold; /* Gør teksten fed */
+    letter-spacing: 2px; /* Giver lidt afstand mellem bogstaverne */
+    text-align: center; /* Centrerer teksten */
+ }
+header {
+  display: flex; /* Gør header til en fleksibel container */
+  justify-content: space-between; /* Fordeler elementer med lige meget plads imellem */
+  align-items: center; /* Sørger for, at elementerne er centreret vertikalt */
+  padding: 10px 0 0 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #587090;
+  padding-bottom: 25px;
 }
 
-li{
+.menu {
+  display: flex; /* Gør menuen horisontal */
+  flex-direction: row; /* Sikrer at elementerne ligger i en række */
+  list-style: none; /* Fjerner punkttegn fra listeelementer */
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-right: 20px; /* Tilføjer afstand mellem menupunkterne */
+}
+
+.menu a {
+display: block; /* Gør links til blokke for et bedre klikområde */
+  margin: 5px 60px 0 0;
+  text-decoration: none; /* Fjerner understregning fra links */
+  color: #FFFFFF;
+  font-family: "Kurale", serif;
+  font-size: 20px;
+  white-space: nowrap;
+  transition: transform 0.3s ease; /* Glidende overgang for forstørrelsen */
+  border-radius: 40px;
+  border: 1px solid;
+  padding: 15px 30px;
+ 
+}
+
+.menu a:hover {
+    transform: scale(1.2); 
+  }
+
+nav ul{
     text-decoration: none;
-    color: #FFFFFF;
+  list-style: none;  
+}
+
+.burger {
+  width: 30px; /* Bredden på burgerikonet */
+  height: 20px; /* Højden på burgerikonet */
+  cursor: pointer; /* Gør ikonet klikbart */
+  margin: 5px 10px 0;
+}
+
+.burger .line {
+  width: 100%; /* Sikre at linjer fylder hele bredden */
+  height: 2px; /* Linjetykkelse */
+  background-color: black; /* Linjefarve */
+  margin-bottom: 5px; /* Afstanden mellem linjerne */
+  transition: 0.2s linear; /* Glidende overgang for animation */
+  border-radius: 10px; /* Rundede hjørner for et blødere udtryk */
+}
+
+.burger {
+  display: none; /* Gør burgermenu usynlig på desktop view */
+}
+
+@media (max-width: 900px){
+    .menu{
+        display: none; /* Skjuler menuen på små skærme */
+    }
+    .burger {
+    display: block; /* Gør burgermenu synlig på mobil view */
+  }
+
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px); /* Rotere første linje for at skabe et X */
+    transition: 0.2s linear; /* Glidende overgang for animationen */
+  }
+
+  .burger.active .line:nth-child(2) {
+    opacity: 0; /* Skjuler midterlinjen */
+    transition: 0.15s linear; /* Hastigheden på overgangen fra linjer til X */
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px); /* Roterer tredje linje for at skabe et X */
+    transition: 0.2s linear; /* Glidende overgang for animationen */
+  }
+
+  nav.active .menu {
+    display: block; /* Gør menuen synlig, når der trykkes på burgerikonet */
+    position: absolute; /* Placerer menuen ovenover andet indhold (fx header og logo) */
+    top: 49px; /* Får menuen til at udfolde sig lige under headeren */
+    background-color: #e7e6e1;
+    right: 0;
+    left: 0;
+    width: 100%; /* Gør menuen fuldbredde */
+    z-index: 1; /* Gør menuen vises ovenover alt andet indhold */
+  }
+
+  nav.active .menu li {
+    margin: 10px 20px; /* Tilføjer lidt luft mellem menu muligheder */
+  }
+
+  nav.active .menu a {
+    font-size: 24px; /* Skriftstørrelse for menuen */
+  }
+
+  .menu a {
+    display: block; /* Gør links til blokke for et bedre klikområde */
+    margin: 5px 60px 0 0;
+    text-decoration: underline; /* Fjerner understregning fra links */
+    color: black; /* Sæt tekstfarve */
+    font-family: "Kurale", serif;
+    font-size: 25px;
+    transition: transform 0.3s ease; /* Glidende overgang for forstørrelsen */
+  }
+
+  .menu a:hover {
+    text-decoration: underline; /* Ændrer farve ved hover for bedre brugervenlighed- og oplevelse */
+    transform: scale(1); /* Forstørrer elementet med 10% */
+  }
 }
 </style>
