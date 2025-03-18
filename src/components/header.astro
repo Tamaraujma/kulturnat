@@ -1,15 +1,17 @@
 ---
-const {text} = Astro.props
-const {h1} = Astro.props
+
 ---
 
 
 <header>
-    <h1>{h1}</h1>
+    <h1>KULTURNAT HELSINGØR</h1>
 <div class="menu">
     <nav>
         <ul>
-            <li><a href="#">{text}</a></li>
+            <li><a href="#"></a>MENU 1</li>
+            <li><a href="#"></a>MENU 2</li>
+            <li><a href="#"></a>MENU 3</li>
+            <li><a href="#"></a>MENU 4</li>
         </ul>
         <div class="burger">
             <div class="line"></div>
@@ -52,25 +54,25 @@ header {
 
 .menu li {
   margin-right: 20px; /* Tilføjer afstand mellem menupunkterne */
+  color: #FFFFFF;
+  border-radius: 40px;
+  border: 1px solid;
+  padding: 15px 30px;
+  gap: 20px;
+  margin: 2rem
 }
 
 .menu a {
 display: block; /* Gør links til blokke for et bedre klikområde */
   margin: 5px 60px 0 0;
   text-decoration: none; /* Fjerner understregning fra links */
-  color: #FFFFFF;
-  font-family: "Kurale", serif;
   font-size: 20px;
-  white-space: nowrap;
   transition: transform 0.3s ease; /* Glidende overgang for forstørrelsen */
-  border-radius: 40px;
-  border: 1px solid;
-  padding: 15px 30px;
- 
 }
 
-.menu a:hover {
+.menu li:hover {
     transform: scale(1.2); 
+    white-space: nowrap;
   }
 
 nav ul{
