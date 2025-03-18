@@ -1,30 +1,32 @@
 ---
-import Header from "../components/header.astro";
+import Header from "../components/header.astro"
+import Footer from "../components/footer.astro"
+import OmSide from "../components/om_side.astro"
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="stylesheet" href="/styles/style.css" />
-    <title>Astro Basics</title>
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="stylesheet" href="/styles/style.css">
+		<title>Astro Basics</title>
+	</head>
+	
+	<body>
+		<Header/>
+	
 
-  <body>
-    <Header h1="HELSINGØR KULTURNAT" />
-    <Header text="FORSIDE" />
-    <Header text="OM KULTUNATTEN" />
-    <Header text="PROGRAM" />
-    <Header text="ARRANGØR" />
+		<Footer/>
 
-    <slot />
-    <layout>
-      <script src="/src/js/burgermenu.js"></script>
-    </layout>
-  </body>
+		<slot />
+		<layout>
+			<script src="/src/js/burgermenu.js"></script>
+		</layout>
+
+	</body>
 </html>
 
 <style>
