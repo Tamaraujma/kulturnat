@@ -1,0 +1,74 @@
+---
+import Image from "astro/components/Image.astro";
+import kronborg from "../img/kronborg.svg";
+import kirke from "../img/kirke.svg";
+import akvarium from "../img/Generative Object.svg";
+import museum from "../img/museet.svg";
+import boat from "../img/sailing_boat 1.svg";
+---
+
+<Image src={boat} alt="boat" />
+<h1>Kulturnat - Helsingør 2025</h1>
+<p>
+  Her kan du opleve nogle af de spændende events, som foregår under kulturnat
+</p>
+<div class="grid_1-1">
+  <div>
+    <Image src={kronborg} alt="Kronborg slot" />
+  </div>
+  <div>
+    <h3>Kronborg slot</h3>
+    <p>
+      Oplev ikoniske Kronborg Slot på Kulturnatten! Træd ind i Hamlets hjem og
+      mærk historiens vingesus. Udforsk sale, kasematter og fortællinger om
+      konger og Shakespeare.
+    </p>
+  </div>
+</div>
+<div class="grid_1-1">
+  <div>
+    <h3>Sct. Mariæ kirke</h3>
+    <p>
+      Træd ind i Sct. Mariæ Kirke og oplev en aften med ro, historie og smuk
+      arkitektur. Nyd orgeltoner, udforsk kirkens historie og mærk fortidens
+      nærvær under de imponerende hvælvinger.
+    </p>
+  </div>
+  <div>
+    <Image src={kirke} alt="Sct. Mariæ kirke" />
+  </div>
+</div>
+<div class="grid_1-1">
+  <div>
+    <Image src={akvarium} alt="Øresundsakvariet" />
+  </div>
+  <div>
+    <h3>Øresundsakvariet</h3>
+    <p>
+      Dyk ned i havets magi på Kulturnatten hos Øresundsakvariet! Oplev
+      spændende dyreliv i blødt lys og kom tæt på fisk, havdyr og krebsdyr, mens
+      du udforsker livet under overfladen.
+    </p>
+  </div>
+</div>
+<div class="grid_1-1">
+  <div>
+    <h3>M/S museet for søfart</h3>
+    <p>
+      Tag på en stemningsfuld rejse gennem søfartens historie hos M/S Museet for
+      Søfart. Oplev prisvindende arkitektur, fascinerende udstillinger og
+      spændende fortællinger om livet til søs.
+    </p>
+  </div>
+  <div>
+    <Image src={museum} alt="M/S Museet for Søfart" />
+  </div>
+</div>
+
+<style>
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+</style>
