@@ -12,8 +12,10 @@ import boat from "../img/sailing_boat 1.svg";
 <p>
   Her kan du opleve nogle af de spændende events, som foregår under kulturnat
 </p>
-<div>
-  <Image src={kronborg} alt="Kronborg slot" />
+<div class="grid_1-1">
+  <div>
+    <Image src={kronborg} alt="Kronborg slot" />
+  </div>
   <div>
     <h3>Kronborg slot</h3>
     <p>
@@ -23,8 +25,7 @@ import boat from "../img/sailing_boat 1.svg";
     </p>
   </div>
 </div>
-<div>
-  <Image src={kirke} alt="Sct. Mariæ kirke" />
+<div class="grid_1-1">
   <div>
     <h3>Sct. Mariæ kirke</h3>
     <p>
@@ -33,9 +34,14 @@ import boat from "../img/sailing_boat 1.svg";
       nærvær under de imponerende hvælvinger.
     </p>
   </div>
+  <div>
+    <Image src={kirke} alt="Sct. Mariæ kirke" />
+  </div>
 </div>
-<div>
-  <Image src={akvarium} alt="Øresundsakvariet" />
+<div class="grid_1-1">
+  <div>
+    <Image src={akvarium} alt="Øresundsakvariet" />
+  </div>
   <div>
     <h3>Øresundsakvariet</h3>
     <p>
@@ -45,8 +51,7 @@ import boat from "../img/sailing_boat 1.svg";
     </p>
   </div>
 </div>
-<div>
-  <Image src={museum} alt="M/S Museet for Søfart" />
+<div class="grid_1-1">
   <div>
     <h3>M/S museet for søfart</h3>
     <p>
@@ -55,4 +60,15 @@ import boat from "../img/sailing_boat 1.svg";
       spændende fortællinger om livet til søs.
     </p>
   </div>
+  <div>
+    <Image src={museum} alt="M/S Museet for Søfart" />
+  </div>
 </div>
+
+<style>
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+</style>
